@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: aksconstruction 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aksconstruction
+  template:
+    metadata:
+      labels:
+        app: aksconstruction 
+    spec:
+      containers:
+        - name: aksconstruction 
+          image: jonghocontainer.azurecr.io/aksconstruction
+          ports:
+          - containerPort: 80
